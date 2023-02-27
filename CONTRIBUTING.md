@@ -5,12 +5,12 @@ We welcome contributions to [Repository](https://github.com/tau-github-actions-f
 ## Getting started
 To get started with contributing to [Repository](https://github.com/tau-github-actions-for-testing/tau-digital-bank-e2e-tests), you can follow these steps:
 
-Fork the repository
-Clone the repository to your local machine
-Create a new branch for your changes
-Make your changes and commit them with descriptive commit messages
-Push your changes to your forked repository
-Open a pull request to the original repository
+1. Fork the repository
+2. Clone the repository to your local machine
+3. Create a new branch for your changes
+4. Make your changes and commit them with descriptive commit messages
+5. Push your changes to your forked repository
+6. Open a pull request to the original repository
 
 ## Code of Conduct
 We expect all contributors to abide by our Code of Conduct which outlines our expectations for behavior within the community.
@@ -21,9 +21,9 @@ If you find a bug or have a feature request, please create an issue on our [issu
 ## Pull requests
 We welcome pull requests for bug fixes, features, and documentation improvements. Before submitting a pull request, please make sure your changes:
 
-Adhere to the style and conventions used in the project
-Are well documented
-Include tests if appropriate
+* Adhere to the style and conventions used in the project
+* Are well documented
+* Include tests if appropriate
 
 ## Code reviews
 All pull requests will be reviewed by a maintainer or contributor of the project. We may suggest changes or improvements to your code, and we ask that you address these in a timely manner.
