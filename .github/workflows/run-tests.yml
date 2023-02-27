@@ -6,7 +6,7 @@ on:
     types: [trigger-tests]
         
 env: 
-  SUT: ${{ github.event.client_payload.SUT }}
+  SUT: ${{ github.event.client_payload.sut }}
   
 jobs:
   e2e-tests:
