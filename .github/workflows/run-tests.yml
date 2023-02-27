@@ -2,22 +2,17 @@ name: Build and Run e2e tests
 run-name: Deploy to ${{ github.event.client_payload.sut }} trigger via >${{ github.event_name }}< by @${{ github.actor }}
 
 on:
-  push:
   repository_dispatch:
     types: [trigger-tests]
-    inputs: 
-      sut: 
-        description: 'Testsystem IP address'
-        required: true
         
 env: 
-  SUT: '3.69.31.75'
-  # ${{ github.event.client_payload.sut }}
+  SUT: ${{ github.event.client_payload.SUT }}
   
 jobs:
   e2e-tests:
-    runs-on: ubuntu-latest # or macos-latest, windows-latest
-
+    name: Run end-2-end tests for the ip ${{ env.SUT }}
+    runs-on: ubuntu-latest
+    
     steps:
       - uses: actions/checkout@v3
         
