@@ -1,0 +1,30 @@
+{
+  "name": "playwright-react-typescript-jest-example",
+  "version": "1.0.0",
+  "description": "an example of how to use playwright",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "playwright test e2e --headed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/e2e-pipeline-workshop/automationstar-playwright-tests.git"
+  },
+  "keywords": [
+    "playwright",
+    "testing",
+    "javascript",
+    "typescript",
+    "react",
+    "jest"
+  ],
+  "author": "Matthias Zax",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/e2e-pipeline-workshop/automationstar-playwright-tests/issues"
+  },
+  "homepage": "https://github.com/e2e-pipeline-workshop/automationstar-playwright-tests#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.27.0"
+  }
+}

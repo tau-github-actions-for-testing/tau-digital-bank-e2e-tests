@@ -1,0 +1,45 @@
+name: Build and Run e2e tests
+run-name: Deploy to ${{ github.event.client_payload.sut }} trigger via >${{ github.event_name }}< by @${{ github.actor }}
+
+on:
+  push:
+  repository_dispatch:
+    types: [trigger-tests]
+    inputs: 
+      sut: 
+        description: 'Testsystem IP address'
+        required: true
+        
+env: 
+  SUT: '3.69.31.75'
+  # ${{ github.event.client_payload.sut }}
+  
+jobs:
+  e2e-tests:
+    runs-on: ubuntu-latest # or macos-latest, windows-latest
+
+    steps:
+      - uses: actions/checkout@v3
+        
+      - name: Check IP
+        run: echo "${{ env.SUT }}"
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: 'npm'
+
+      - name: Install dependencies and run tests
+        run: npm install
+
+      - name: Install Playwright Dependencies
+        run: npx playwright install
+
+      - name: run the tests
+        run: SUT="http://${{ env.SUT }}:8080/digibank/login" npx playwright test
+             
+      - if: always()
+        uses: actions/upload-artifact@master
+        with:
+          name: test-report.html
+          path: ./playwright-report/index.html
