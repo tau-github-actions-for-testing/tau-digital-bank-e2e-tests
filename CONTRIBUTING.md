@@ -1,4 +1,4 @@
-# Contributing to [Repository Name]
+# Contributing to [Repository Name](https://github.com/tau-github-actions-for-testing/tau-digital-bank-e2e-tests)
 
 We welcome contributions to [Repository Name] from the community. Whether it's a bug fix, feature enhancement or documentation improvement, we appreciate your help to make this project better.
 
