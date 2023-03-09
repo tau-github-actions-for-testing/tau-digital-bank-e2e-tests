@@ -2,16 +2,16 @@ name: Build and Run e2e tests
 run-name: Deploy to ${{ github.event.client_payload.sut }} trigger via >${{ github.event_name }}< by @${{ github.actor }}
 
 on:
+  push:
   repository_dispatch:
     types: [trigger-tests]
-  push:
+    
+env:
+  SUT: ${{ github.event.client_payload.sut }}
 
 jobs:
   e2e-tests:
-
-    name: Run end-2-end tests for the ip ${{ github.event.client_payload.sut }}
-    env:
-      SUT_IP: 3.121.214.195
+    name: Run end-2-end tests for the ip ${{ env.SUT_IP }}
     runs-on: ubuntu-latest
         
     steps:
