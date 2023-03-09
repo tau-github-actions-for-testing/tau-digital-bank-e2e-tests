@@ -4,9 +4,10 @@ run-name: Deploy to ${{ github.event.client_payload.sut }} trigger via >${{ gith
 on:
   repository_dispatch:
     types: [trigger-tests]
-        
+  push:
+  
 env: 
-  SUT: ${{ github.event.client_payload.sut }}
+  SUT: ${{ github.event.client_payload.sut || 3.121.214.195 }}
   
 jobs:
   e2e-tests:
