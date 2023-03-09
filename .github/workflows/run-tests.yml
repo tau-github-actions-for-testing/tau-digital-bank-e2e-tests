@@ -2,7 +2,6 @@ name: Build and Run e2e tests
 run-name: Deploy to ${{ github.event.client_payload.sut }} trigger via >${{ github.event_name }}< by @${{ github.actor }}
 
 on:
-  push:
   repository_dispatch:
     types: [trigger-tests]
 
