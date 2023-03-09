@@ -5,19 +5,16 @@ on:
   repository_dispatch:
     types: [trigger-tests]
 
-env:
-  SUT_IP: ${{ github.event.client_payload.sut }}
-
 jobs:
   e2e-tests:
-    name: "Run end-2-end tests for the ip ${{ env.SUT_IP }}"
+    name: "Run end-2-end tests for the ip ${{ github.event.client_payload.sut }}"
     runs-on: ubuntu-latest
         
     steps:
       - uses: actions/checkout@v3
         
       - name: Check IP
-        run: echo "${{ env.SUT_IP }}"
+        run: echo "${{ github.event.client_payload.sut }}"
 
       - uses: actions/setup-node@v3
         with:
@@ -31,7 +28,7 @@ jobs:
         run: npx playwright install
 
       - name: run the tests
-        run: SUT="http://${{ env.SUT_IP }}:8080/digibank/login" npx playwright test
+        run: SUT="http://${{ github.event.client_payload.sut }}:8080/digibank/login" npx playwright test
              
       - if: always()
         uses: actions/upload-artifact@master
