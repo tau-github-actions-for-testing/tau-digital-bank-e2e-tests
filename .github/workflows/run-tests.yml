@@ -6,8 +6,8 @@ on:
     types: [trigger-tests]
   push:
   
-env: 
-  SUT_IP: 3.121.214.195
+env:
+  SUT_IP: maven:3.8.6-jdk-11
   
 jobs:
   e2e-tests:
@@ -18,7 +18,7 @@ jobs:
       - uses: actions/checkout@v3
         
       - name: Check IP
-        run: echo "${{ env.SUT }}"
+        run: echo "${{ env.SUT_IP }}"
 
       - uses: actions/setup-node@v3
         with:
