@@ -7,7 +7,7 @@ on:
   push:
   
 env: 
-  SUT_IP: ${{ github.event.client_payload.sut || "3.121.214.195" }}
+  SUT_IP: ${{ github.event.client_payload.sut }} || "3.121.214.195" 
   
 jobs:
   e2e-tests:
